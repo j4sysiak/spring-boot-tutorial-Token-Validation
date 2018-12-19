@@ -38,6 +38,9 @@ public class SiteUser {
 	@Column(name = "password", length=60)
 	private String password;
 	
+	@Column(name="enabled")
+	private Boolean enabled=true;
+	
 	@Transient
 	private String repeatPassword;
 	
@@ -91,6 +94,14 @@ public class SiteUser {
 
 	public void setRepeatPassword(String repeatPassword) {
 		this.repeatPassword = repeatPassword;
+	}
+
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }
