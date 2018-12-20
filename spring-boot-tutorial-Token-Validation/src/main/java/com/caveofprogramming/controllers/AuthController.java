@@ -59,7 +59,7 @@ public class AuthController {
 		
 		if(token == null){
 			modelAndView.setViewName("redirect:/invaliduser");
-			//userService.deleteToken(token);
+			siteUserService.deleteToken(token);
 			return modelAndView;
 		}
 		
@@ -67,7 +67,7 @@ public class AuthController {
 		
 		if(expiryDate.before(new Date())){
 			modelAndView.setViewName("redirect:/expiredtoken");
-			//userService.deleteToken(token);
+			siteUserService.deleteToken(token);
 			return modelAndView;
 		}
 		
@@ -75,11 +75,11 @@ public class AuthController {
 		
 		if(user == null){
 			modelAndView.setViewName("redirect:/invaliduser");
-			//userService.deleteToken(token);
+			siteUserService.deleteToken(token);
 			return modelAndView;
 		}
 		
-		//userService.deleteToken(token);
+		siteUserService.deleteToken(token);
 		user.setEnabled(true);
 		siteUserService.save(user);
 		
