@@ -1,6 +1,7 @@
 package com.caveofprogramming.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -16,6 +17,9 @@ import org.springframework.stereotype.Service;
 
 import com.caveofprogramming.model.SiteUser;
 import com.caveofprogramming.model.SiteUserDao;
+import com.caveofprogramming.model.TokenType;
+import com.caveofprogramming.model.VerificationDao;
+import com.caveofprogramming.model.VerificationToken;
 
 @Service
 public class SiteUserService implements UserDetailsService {
@@ -38,7 +42,9 @@ public class SiteUserService implements UserDetailsService {
 		siteUserDao.save(user);
 	}
 
-
+	@Autowired
+	private VerificationDao verificationDao;
+	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		
@@ -59,8 +65,18 @@ public class SiteUserService implements UserDetailsService {
 		return new User(email, password, enabled, true, true, true, auth);
 	}
 
+	public String createEmailVerificationToken(SiteUser user) {
+		
+		VerificationToken token = new VerificationToken(UUID.randomUUID().toString(), user, TokenType.REGISTRATION);
+		
+		verificationDao.save(token);
+		return token.getToken();
+	}
 
-
+	public VerificationToken getVerificationToken(String token) {
+		
+		return verificationDao.findByToken(token);
+	}
 }
 
 
