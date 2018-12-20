@@ -89,10 +89,17 @@ public class AuthController {
 		modelAndView.setViewName("app.register");
 		
 		if(!result.hasErrors()) {
+			
 			siteUserService.register(user);
-			emailService.sendVerificationEmail(user.getEmail());
+			
+			String token = siteUserService.createEmailVerificationToken(user);
+			
+			emailService.sendVerificationEmail(user.getEmail(), token);
+			
 			modelAndView.setViewName("redirect:/verifyemail");
+			
 			user.setEnabled(true);
+			
 			siteUserService.save(user);
 		}
 		return modelAndView;

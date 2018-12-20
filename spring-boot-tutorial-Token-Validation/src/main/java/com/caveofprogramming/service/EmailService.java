@@ -29,6 +29,9 @@ public class EmailService {
 	@Value("${mail.enable}")
 	private Boolean enable;
 	
+	@Value("${site.url}")
+	private String url;
+	
 	
 	//konstruktor
 	@Autowired
@@ -54,7 +57,7 @@ public class EmailService {
 	}
 	 
 	
-	public void sendVerificationEmail(String emailAddress){
+	public void sendVerificationEmail(String emailAddress, String token){
 		
 //		StringBuilder sb = new StringBuilder();
 //		
@@ -64,11 +67,13 @@ public class EmailService {
 		
 		Context context = new Context();
 		
-		context.setVariable("name", "Jacek");
+		//context.setVariable("name", "Jacek");
+		context.setVariable("token", token);
+		context.setVariable("url", url);
 		
-		final String emailContents = templateEngine.process("verifyemail", context);
+		String emailContents = templateEngine.process("verifyemail", context);
 		
-		System.out.println(emailContents);
+		//System.out.println(emailContents);
 		
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			
