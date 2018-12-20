@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 //import org.thymeleaf.TemplateEngine;
 //import org.thymeleaf.context.Context;
@@ -56,8 +57,14 @@ public class EmailService {
 		}
 	}
 	 
-	
+	@Async
 	public void sendVerificationEmail(String emailAddress, String token){
+		
+		try {
+			Thread.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 //		StringBuilder sb = new StringBuilder();
 //		
