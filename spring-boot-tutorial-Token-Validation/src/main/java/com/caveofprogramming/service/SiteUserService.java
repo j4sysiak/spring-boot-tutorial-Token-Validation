@@ -2,6 +2,8 @@ package com.caveofprogramming.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -30,6 +32,11 @@ public class SiteUserService implements UserDetailsService {
 	  //user.setPassword(passwordEncoder.encode(user.getPassword()));
 	  siteUserDao.save(user);
 	}
+	
+	public void save(SiteUser user) {
+		
+		siteUserDao.save(user);
+	}
 
 
 	@Override
@@ -51,6 +58,9 @@ public class SiteUserService implements UserDetailsService {
 		 
 		return new User(email, password, enabled, true, true, true, auth);
 	}
+
+
+
 }
 
 
