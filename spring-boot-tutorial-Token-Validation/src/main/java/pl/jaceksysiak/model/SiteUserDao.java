@@ -1,4 +1,4 @@
-package com.caveofprogramming.model;
+package pl.jaceksysiak.model;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;

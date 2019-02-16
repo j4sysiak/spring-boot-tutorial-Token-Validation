@@ -1,4 +1,4 @@
-package com.caveofprogramming.service;
+package pl.jaceksysiak.service;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,11 +15,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.caveofprogramming.model.SiteUser;
-import com.caveofprogramming.model.SiteUserDao;
-import com.caveofprogramming.model.TokenType;
-import com.caveofprogramming.model.VerificationDao;
-import com.caveofprogramming.model.VerificationToken;
+import pl.jaceksysiak.model.SiteUser;
+import pl.jaceksysiak.model.SiteUserDao;
+import pl.jaceksysiak.model.TokenType;
+import pl.jaceksysiak.model.VerificationDao;
+import pl.jaceksysiak.model.VerificationToken;
 
 @Service
 public class SiteUserService implements UserDetailsService {

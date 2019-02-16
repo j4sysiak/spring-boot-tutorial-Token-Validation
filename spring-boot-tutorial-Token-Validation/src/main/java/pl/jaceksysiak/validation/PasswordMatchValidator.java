@@ -1,9 +1,9 @@
-package com.caveofprogramming.validation;
+package pl.jaceksysiak.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import com.caveofprogramming.model.SiteUser;
+import pl.jaceksysiak.model.SiteUser;
 
 public class PasswordMatchValidator implements ConstraintValidator<PasswordMatch, SiteUser> {
 

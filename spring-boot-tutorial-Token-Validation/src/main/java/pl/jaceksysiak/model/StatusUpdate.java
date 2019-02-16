@@ -1,4 +1,4 @@
-package com.caveofprogramming.model;
+package pl.jaceksysiak.model;
 
 import java.util.Date;
 

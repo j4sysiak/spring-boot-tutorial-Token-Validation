@@ -1,4 +1,4 @@
-package com.caveofprogramming.model;
+package pl.jaceksysiak.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.caveofprogramming.validation.PasswordMatch;
+import pl.jaceksysiak.validation.PasswordMatch;
  
 
 @Entity

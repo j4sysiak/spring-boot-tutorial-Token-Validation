@@ -1,4 +1,4 @@
-package com.caveofprogramming.tests;
+package pl.jaceksysiak.tests;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -15,8 +15,8 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.caveofprogramming.model.StatusUpdate;
-import com.caveofprogramming.model.StatusUpdateDao;
+import pl.jaceksysiak.model.StatusUpdate;
+import pl.jaceksysiak.model.StatusUpdateDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)

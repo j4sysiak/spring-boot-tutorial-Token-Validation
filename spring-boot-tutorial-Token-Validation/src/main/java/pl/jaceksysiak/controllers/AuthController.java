@@ -1,4 +1,4 @@
-package com.caveofprogramming.controllers;
+package pl.jaceksysiak.controllers;
 
 import java.util.Date;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.caveofprogramming.model.SiteUser;
-import com.caveofprogramming.model.VerificationToken;
-import com.caveofprogramming.service.EmailService;
-import com.caveofprogramming.service.SiteUserService;
+import pl.jaceksysiak.model.SiteUser;
+import pl.jaceksysiak.model.VerificationToken;
+import pl.jaceksysiak.service.EmailService;
+import pl.jaceksysiak.service.SiteUserService;
 
 @Controller
 public class AuthController {

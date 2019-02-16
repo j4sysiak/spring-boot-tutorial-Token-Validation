@@ -1,4 +1,4 @@
-package com.caveofprogramming.model;
+package pl.jaceksysiak.model;
 
 public enum TokenType {
 	REGISTRATION,

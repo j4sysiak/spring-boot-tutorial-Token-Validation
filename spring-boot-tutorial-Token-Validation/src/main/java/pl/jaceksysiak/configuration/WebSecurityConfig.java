@@ -1,4 +1,4 @@
-package com.caveofprogramming.configuration;
+package pl.jaceksysiak.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.caveofprogramming.service.SiteUserService;
+import pl.jaceksysiak.service.SiteUserService;
 
 @Configuration
 @EnableWebSecurity

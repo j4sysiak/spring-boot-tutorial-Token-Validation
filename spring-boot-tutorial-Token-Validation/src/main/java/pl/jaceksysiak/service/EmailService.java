@@ -1,4 +1,4 @@
-package com.caveofprogramming.service;
+package pl.jaceksysiak.service;
 
 import java.util.Date;
 
